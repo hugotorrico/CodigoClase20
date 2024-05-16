@@ -1,0 +1,52 @@
+﻿<Window x:Class="CodigoClase20.Products"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CodigoClase20"
+        mc:Ignorable="d"
+        Title="Products" Height="700" Width="500">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="Foreground" Value="#4B2E2B"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#A67B5B"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderBrush" Value="#8B4513"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+        <Style TargetType="ListViewItem">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#D2B48C"/>
+            <Setter Property="BorderBrush" Value="#A0522D"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <ListView Name="productListView" Margin="10">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" >
+                        <Image Source="https://png.pngtree.com/png-clipart/20210530/original/pngtree-coffee-cup-aroma-container-png-image_6373241.jpg" Height="100" Width="175" />
+                        <StackPanel>
+                            <TextBlock FontSize="14" TextWrapping="Wrap" Height="90" Width="175">
+                       <Run Text="{Binding Name}" />
+                        <LineBreak/>
+                        <Run Text="{Binding Description}" FontStyle="Italic" Foreground="LightSlateGray"/>                            
+                        <LineBreak/>
+                        <Run Text="{Binding Price}" />
+                            </TextBlock>
+                            <Button Content="ADD" Width="100"></Button>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Window>
